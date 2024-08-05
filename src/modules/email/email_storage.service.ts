@@ -19,8 +19,6 @@ export const createFile = async (path: string, fileName: string, data: string): 
     fs.mkdirSync(path);
   }
 
-  console.log(`Creating file at ${path}/${fileName}`);
-
   const writeFile = promisify(fs.writeFile);
 
   return await writeFile(`${path}/${fileName}`, data, 'utf8');
